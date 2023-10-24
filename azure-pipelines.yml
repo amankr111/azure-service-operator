@@ -36,7 +36,7 @@ variables:
   # Release ACR - Only after the deploy test succeeds, the image and helm chart are pushed to the release ACR. 
   # The release pipeline exposes the images in Release ACR through mcr.microsoft.com
 
-  # CONTAINER_REGISTRY: Service Connection Name for Release ACR.
+  # CONTAINER_REGISTRY: 'openaiapim'
   # CONTAINER_REGISTRY_NAME: Name of the Release ACR.
   # PIPELINE_CONTAINER_REGISTRY: Service Connection Name for temporary ACR used in pipeline. 
   # PIPELINE_CONTAINER_REGISTRY_NAME: Name of the temporary ACR used in the pipeline.
