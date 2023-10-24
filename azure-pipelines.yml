@@ -22,18 +22,15 @@ variables:
   IMAGE_NAME: 'candidate/k8s/azureserviceoperator'
   ASO_HELM_CHART_NAME: 'candidate/k8s/asohelmchart'
   KUBEBUILDER_ASSETS: $(go env GOPATH)/bin
-
-  # Set these values in Azure Devops variables 
-
-  # AKS_CLUSTER_RG: Name of Resource group where AKS clusters used for testing are present
-  # OPERATOR_NAMESPACE: Namespace in AKS cluster that operator is deployed to (Default: azureoperator-system)
-  # ASO-DEVOPS-MI: Name of Managed Identity to use to deploy the Operator as in AKS
+  AKS_CLUSTER_RG: 'AzureServiceOperator-RG1'
+  OPERATOR_NAMESPACE: 'azureoperator-system'
+  # ASO-DEVOPS-MI: 'azure-service-operator-iaac'
   # POD-IDENTITY-CLIENTID: ClientID of Managed Identity to use to deploy the Operator as in AKS
-  # AZURE_OPERATOR_KEYVAULT: Keyvault passed to Operator deployment to use for secrets
-  # AZURE_CLIENT_ID: Client ID of Service Principal used to run integration tests on Kind Cluster, login to Helm registry ACR
-  # AZURE_CLIENT_SECRET: Secret for the above Client ID
-  # AZURE_SUBSCRIPTION_ID: Subscription ID that the pipeline runs against
-  # AZURE_TENANT_ID: Tenant ID that the pipeline runs against 
+  # AZURE_OPERATOR_KEYVAULT: KeClientID of Managed Identity to use to deploy the Operator as in AKSyvault passed to Operator deployment to use for secrets
+  AZURE_CLIENT_ID: '9676f2c8-e0fa-46c9-a5de-b786d19c9102'
+  AZURE_CLIENT_SECRET: 'KnO8Q~hsDn6nXFGZvAmXt2BnN1LzA5Dyw7ZpLdbn'
+  AZURE_SUBSCRIPTION_ID: '6e977b0d-998c-42d7-97ed-dd70040cff12'
+  AZURE_TENANT_ID: '665b6c62-7310-4d39-9abb-32a0cbc3b90f'
 
   # Pipeline ACR - Temporary ACR used to hold the image until AKS deploy testing is done.
   # Release ACR - Only after the deploy test succeeds, the image and helm chart are pushed to the release ACR. 
